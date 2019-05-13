@@ -1,0 +1,50 @@
+html,body{
+  min-height: 100vh;
+}
+.page{
+  position: relative;
+  min-height: 100vh;
+  background: #f3f3f3;
+}
+
+.page-header{
+  margin: 0;
+  border-radius: 2px;
+  background: #555555;
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+}
+
+.page-header-logo{
+  min-width: 100%;
+  min-height: 10px;
+  background: #f1f1f1;
+}
+
+.page-header-title{
+  padding: 0 0 0 10px;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #f6993f;
+}
+.page-header-create-news{
+  padding: 0 10px 0 0;
+  text-align: right;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #f1f1f1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.page-footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  min-height: 40px;
+  background: #555555;
+  color: #f1f1f1;
+  border-radius: 4px;
+}
