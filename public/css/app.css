@@ -18,10 +18,13 @@ body {
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.page-header-logo {
-  min-width: 100%;
-  min-height: 10px;
-  background: #f1f1f1;
+.page-header-user {
+  padding: 5px 10px 0 0;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+  color: #f6993f;
 }
 
 .page-header-title {
@@ -32,14 +35,24 @@ body {
   color: #f6993f;
 }
 
+.page-news-link {
+  text-decoration: none;
+  color: #f1f1f1;
+  white-space: nowrap;
+}
+
+.page-news-link:hover {
+  text-decoration: none;
+  color: #f1f1f1;
+  white-space: nowrap;
+}
+
 .page-header-create-news {
   padding: 0 10px 0 0;
   text-align: right;
   font-family: "Segoe UI", sans-serif;
   font-weight: bold;
   font-size: 14px;
-  color: #f1f1f1;
-  white-space: nowrap;
   cursor: pointer;
 }
 

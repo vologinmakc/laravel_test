@@ -10462,25 +10462,88 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/ajax.js":
+/***/ "./resources/js/common/editor.js":
+/*!***************************************!*\
+  !*** ./resources/js/common/editor.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $('.js-editor').each(function () {
+    var textarea = $(this),
+        container = $('<div/>', {
+      'class': 'js-editor-container',
+      'id': 'editorContainer' + Math.random()
+    });
+    textarea.hide();
+    textarea.after(container);
+    var editor = new Quill(container.get(0), {
+      modules: {
+        toolbar: [['bold', 'italic', 'underline', 'strike'], ['blockquote', 'image'], [{
+          'list': 'ordered'
+        }, {
+          'list': 'bullet'
+        }], [{
+          'header': [1, 2, 3, 4, 5, 6, false]
+        }], [{
+          'color': []
+        }], [{
+          'align': []
+        }], ['clean']]
+      },
+      theme: 'snow'
+    }); //editor.clipboard.dangerouslyPasteHTML(textarea.val());
+
+    editor.on('text-change', function (delta, oldDelta, source) {
+      textarea.val(editor.root.innerHTML);
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/common/news-tags.js":
+/*!******************************************!*\
+  !*** ./resources/js/common/news-tags.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(function () {
+  $('#tags').each(function () {
+    var component = $(this);
+    component.tagsInput({
+      'height': '50px'
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/news.js":
 /*!******************************!*\
-  !*** ./resources/js/ajax.js ***!
+  !*** ./resources/js/news.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
+__webpack_require__(/*! ./common/editor */ "./resources/js/common/editor.js");
+
+__webpack_require__(/*! ./common/news-tags */ "./resources/js/common/news-tags.js");
+
 /***/ }),
 
 /***/ 1:
 /*!************************************!*\
-  !*** multi ./resources/js/ajax.js ***!
+  !*** multi ./resources/js/news.js ***!
   \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\test.host.loc\resources\js\ajax.js */"./resources/js/ajax.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\test.host.loc\resources\js\news.js */"./resources/js/news.js");
 
 
 /***/ })

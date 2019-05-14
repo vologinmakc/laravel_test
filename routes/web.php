@@ -12,6 +12,12 @@
 */
 
 Route::get('/', 'HomeController@index')->name('index');
+Route::get('/create_news', 'HomeController@create')->name('create.news');
+Route::post('/create_news/store', 'HomeController@store')->name('create.news.store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

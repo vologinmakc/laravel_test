@@ -13,23 +13,55 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/news.js') }}"></script>
+
+    <!-- Include Quill stylesheet -->
+    <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+
+    <!-- Include TagsScript stylesheet -->
+    <link href="{{ asset('css/jquery.tagsinput.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/jquery.tagsinput.js') }}"></script>
+
+
 </head>
 <body>
 <div class="container-fluid page">
+
+    @if(session('warning'))
+        <div class="js-flash-alert alert alert-warning">{{session('warning')}}</div>
+    @endif
+
+    @if(session('message'))
+        <div class="js-flash-alert alert alert-success">{{session('message')}}</div>
+    @endif
+
+    @if(session('error'))
+        <div class="js-flash-alert alert alert-danger">{{session('error')}}</div>
+    @endif
+
     <div class="container page">
         {{--Header--}}
         <div class="row">
             <div class="col-md-12 mt-3">
                 <div class="page-header">
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-md-8">
                             <div class="page-header-title">
                                 Лента новостей
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="page-header-create-news pt-1">
-                                Добавить новость
+                        <div class="col-md-2">
+                            <div class="page-header-user">
+                                @if(isset($user))
+                                    {{$user}}
+                                @endif
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="page-header-create-news  pt-1">
+                                @if(\Request::route()->getName() == 'index')
+                                <a class="page-news-link" href="{{URL::route('create.news')}}">Добавить новость</a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -50,5 +82,7 @@
 
     </div>
 </div>
+
+
 </body>
 </html>
