@@ -12,5 +12,9 @@ class News extends Model
         'title', 'img_url', 'text',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
 }

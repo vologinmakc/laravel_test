@@ -25,8 +25,14 @@ class HomeController extends Controller
     {
         if (Auth::user()) {
             $user = Auth::user()->name;
+
+            # News collection
+            $news = News::get();
+
+
             return view('index', [
-                'user' => $user
+                'user' => $user,
+                'news' => $news
             ]);
         }
         return view('index');
