@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/index';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -35,14 +35,11 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->authenticate();
+        $this->middleware('guest')->except('logout');
     }
 
     public function authenticate()
     {
-        if (Auth::attempt(['email' => 'admin@admin.com', 'password' => 'password']))
-        {
-            return redirect()->intended('index');
-        }
+        //
     }
 }

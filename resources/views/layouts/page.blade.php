@@ -47,7 +47,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="page-header-title">
-                                Лента новостей
+                                <a class="page-news-link" href="{{URL::route('index')}}">Лента новостей</a>
                             </div>
                         </div>
                         <div class="col-md-2">

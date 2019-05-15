@@ -24,13 +24,13 @@
                                         <div class="form-group">
                                             <label for="title">Укажите заголовок</label>
                                             <input value="" type="text" name="title" id="title"
-                                                   class="form-control" required>
+                                                   class="form-control" value="{{old('title')}}" required>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="text">Основной текст новости</label>
                                             <textarea class="form-control js-editor" type="text"
-                                                      name="text" id="text"></textarea>
+                                                      name="text" id="text" value="{{old('text')}}"></textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -43,9 +43,9 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="tags-news">Укажите тэги для новости</label>n>purple</option>
+                                            <label for="tags-news">Укажите тэги для новости(<i>формат: #имя тега#</i> не менее 4 символов)</label></option>
                                             </select>
-                                            <input name="tags-news" id="tags" value="foo,bar,baz" />
+                                            <input name="tags-news" id="tags" value="" />
                                         </div>
 
                                     </div>

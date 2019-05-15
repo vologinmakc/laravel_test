@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('index');
 Route::get('/create_news', 'HomeController@create')->name('create.news');
+Route::get('/{tag?}', 'HomeController@index')->name('index');
 Route::post('/create_news/store', 'HomeController@store')->name('create.news.store');
 
 Auth::routes();

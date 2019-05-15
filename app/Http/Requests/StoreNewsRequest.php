@@ -26,7 +26,7 @@ class StoreNewsRequest extends FormRequest
         return [
             'title' => 'string|required',
             'text' => 'string|required',
-            'tags-news' => 'nullable',
+            'tags-news' => 'nullable|regex:/^#[A-zА-я0-9]{4,}#$/',
             'img_url' => 'nullable'
         ];
     }

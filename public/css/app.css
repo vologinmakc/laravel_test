@@ -47,6 +47,10 @@ body {
   white-space: nowrap;
 }
 
+.page-tags {
+  color: #1b4b72;
+}
+
 .page-header-create-news {
   padding: 0 10px 0 0;
   text-align: right;

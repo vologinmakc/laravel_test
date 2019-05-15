@@ -16,11 +16,17 @@
                                     <div class="">Разместил: {{$news_item->user()->first()->name}}</div>
                                     <div class="">Дата создания:
                                         {{ \Carbon\Carbon::parse($news_item->created_at)->format('d.m.Y')}}</div>
-                                    <div class="">Tags:</div>
+                                    <div class="page-tags">Tags:
+                                        @if($news_item->tags->count() > 0)
+                                                @foreach($news_item->tags as $tag)
+                                                <a href="{{URL::route('index', ['tag' => $tag])}}">{{$tag->name}}</a>
+                                                @endforeach
+                                        @endif
+                                    </div>
                                     <hr>
 
                                 @endforeach
-
+                                    {{ $news->links() }}
                             @else
                                 <div class="alert alert-warning">
                                     <h4>Новостей не найдено</h4>
